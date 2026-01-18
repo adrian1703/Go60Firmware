@@ -1,3 +1,11 @@
+    // layers
+    //#define LAYER_Base 0
+    //#define LAYER_Keypad 1
+    //#define LAYER_SymbolNav 2
+    //#define LAYER_Magic 3
+    //#define LAYER_Factory 4
+
+
     keymap {
         layer_Base {
             bindings = <
