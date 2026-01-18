@@ -390,16 +390,6 @@
                                                                                &trans  &trans  &trans  &trans  &trans  &trans
            >;
         };
-        trans_layer {
-           bindings = <
-           &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                            &trans  &trans  &trans  &trans  &trans  &trans
-           >;
-        };
         macro_layer {
            bindings = <
             &trans      &trans           &trans            &trans            &trans   &trans                          &trans             &trans           &trans           &trans          &trans         &trans
