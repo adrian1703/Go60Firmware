@@ -312,6 +312,15 @@
               ;
         };
 //        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ASCII KEYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+        default_layers: default_layers {
+                              compatible = "zmk,behavior-macro";
+                              #binding-cells = <0>;
+                              bindings
+                                = <&tog DOVRAK>
+                                , <&tog MOD_LAYER>
+                                ;
+                          };
+
         rgb_ug_status_macro: rgb_ug_status_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
