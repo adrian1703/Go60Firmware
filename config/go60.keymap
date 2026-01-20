@@ -137,6 +137,7 @@
         S14: S14 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_PLUS>           , <&kp ASTERISK>        ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S15: S15 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_MINUS>          , <&kp SLASH>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
+        C0:  C0    { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&S14>   , <&S15>                              ; mods =                   <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; keep-mods = <(MOD_LSFT|MOD_RSFT)>; };
         // S7 & S8 ([{<
         C1:  C1    { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LEFT_PARENTHESIS>   , <&C1A>              ; mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; };
         C1A: C1A   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LEFT_BRACKET>       , <&C1B>              ; mods = <(                  MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; keep-mods = <(                  MOD_LALT|MOD_RALT)>; };
@@ -186,12 +187,12 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-//        keypad_td: keypad_td {
-//            compatible = "zmk,behavior-tap-dance";
-//            #binding-cells = <0>;
-//            tapping-term-ms = <200>;
-//            bindings = <&mo LAYER_Keypad>, <&to LAYER_Keypad>;
-//        };
+        fkey_td: fkey_td {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo FKEYS>, <&to FKEYS>;
+        };
 
         bt_0: bt_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -362,23 +363,23 @@
         default_layer {
             bindings = <
             &magic MAGIC 0  &kp N1  &kp N2        &kp N3    &kp N4    &kp N5                                          &kp N6     &kp N7   &kp N8   &kp N9  &kp N0  &none
-            &kp ESC         &none   &none         &none     &none     &none                                           &none      &none    &none    &none   &none   &none
+            &kp ESC         &none   &none         &none     &none     &none                                           &none      &none    &none    &none   &none   &fkey_td
             &kp TAB         &none   &none         &none     &none     &none                                           &none      &none    &none    &none   &none   &none
-            &none           &none   &none         &none     &none     &none                                           &none      &none    &none    &none   &none   &none
-                                    &mt END HOME  &kp LEFT  &kp RIGHT                                                            &kp UP   &kp DOWN &none
+            &none           &none   &none         &none     &none     &none                                           &none      &none    &none    &none   &none   &mt PG_UP PG_DN
+                                    &mt END HOME  &kp LEFT  &kp RIGHT                                                            &kp UP   &kp DOWN &C0
                                                                  &kp SPACE     &kp RET   &kp LCTRL       &kp LSHIFT &kp DEL  &kp BSPC
             >;
         };
         dovrak_base_layer {
-                   bindings = <
-                   &trans   &trans   &trans   &trans   &trans           &trans                                        &trans  &trans   &trans   &trans   &trans   &trans
-                   &trans   &C3      &C4      &C5      &C6              &C7                                           &kp G   &kp K    &kp R    &kp F    &kp J    &trans
-                   &trans   &kp A    &kp O    &kp E    &kp U            &kp I                                         &kp D   &kp H    &kp T    &kp N    &kp B    &kp X
-                   &kp V    &kp Z    &kp P    &kp Y    &mo MACRO_LAYER  &kp M                                         &kp W   &kp S    &kp C    &kp L    &kp Q    &trans
-                                   &trans  &trans  &trans                                                                     &trans   &trans   &trans
-                                                                    &trans  &trans  &trans  &trans  &trans  &trans
-                   >;
-                };
+            bindings = <
+            &trans   &trans   &trans   &trans   &trans           &trans                                        &trans  &trans   &trans   &trans   &trans   &trans
+            &trans   &C3      &C4      &C5      &C6              &C7                                           &kp G   &kp K    &kp R    &kp F    &kp J    &trans
+            &trans   &kp A    &kp O    &kp E    &kp U            &kp I                                         &kp D   &kp H    &kp T    &kp N    &kp B    &kp X
+            &kp V    &kp Z    &kp P    &kp Y    &mo MACRO_LAYER  &kp M                                         &kp W   &kp S    &kp C    &kp L    &kp Q    &trans
+                            &trans  &trans  &trans                                                                     &trans   &trans   &trans
+                                                             &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+         };
         mod_layer {
            bindings = <
            &trans  &trans      &trans        &trans         &trans         &trans                          &trans  &trans         &trans         &trans       &trans           &trans
@@ -405,7 +406,7 @@
             &trans      &kp LC(LS(BSPC)) &kp LC(D)         &kp LC(S)         &trans   &kp LG(LS(S))                   &kp LC(F4)         &none            D16              D17             &none          &trans
             &kp CAPS    &kp LC(X)        &kp LC(Z)         &kp LC(C)         &trans   &kp LS(INS)                     &kp LC(LS(BSPC))   &kp LC(LS(F9))   &kp LC(LS(F10))  &kp LC(F5)      &none          &trans
             &caps_word  &kp LC(W)        &kp LC(F)         &kp LC(R)         &none    &kp LC(V)                       &none              &none            &C1              &C2             &none          &trans
-                                               &trans  &trans  &trans                                                                  &trans  &trans  &trans
+                                               &kp END  &trans  &trans                                                                  &trans  &trans  &trans
                                                             &kp BSPC  &kp DEL  &kp LSHFT  &trans  &trans  &kp TAB
            >;
         };
@@ -442,11 +443,11 @@
         };
         fkey_layer {
             bindings = <
+            &kp F12 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                                  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11
             &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans  &trans  &trans                                                                  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &kp PG_UP
+                            &kp END &trans  &trans                                                                  &trans  &trans  &S15
                                                              &trans  &trans  &trans  &trans  &trans  &trans
            >;
         };
