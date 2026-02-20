@@ -360,6 +360,7 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
             &magic MAGIC 0  &kp N1  &kp N2        &kp N3    &kp N4    &kp N5                                          &kp N6     &kp N7   &kp N8   &kp N9  &kp N0  &none
@@ -370,6 +371,7 @@
                                                                  &kp SPACE     &kp RET   &kp LCTRL       &kp LSHIFT &kp DEL  &kp BSPC
             >;
         };
+
         dovrak_base_layer {
             bindings = <
             &trans   &trans   &trans   &trans   &trans           &trans                                        &trans  &trans   &trans   &trans   &trans   &trans
@@ -380,6 +382,7 @@
                                                              &trans  &trans  &trans  &trans  &trans  &trans
             >;
          };
+
         mod_layer {
            bindings = <
            &trans  &trans      &trans        &trans         &trans         &trans                          &trans  &trans         &trans         &trans       &trans           &trans
@@ -390,6 +393,7 @@
                                                                         &trans  &trans  &trans  &trans  &trans  &trans
            >;
         };
+
         util_layer {
            bindings = <
            &trans  &trans  &trans    &trans    &trans            &trans                                                     &trans     &trans  &trans     &trans     &trans          &trans
@@ -400,6 +404,7 @@
                                                                                &trans  &trans  &trans  &trans  &trans  &trans
            >;
         };
+
         macro_layer {
            bindings = <
             &trans      &trans           &trans            &trans            &trans   &trans                          &trans             &trans           &trans           &trans          &trans         &trans
@@ -410,6 +415,7 @@
                                                             &kp BSPC  &kp DEL  &kp LSHFT  &trans  &trans  &kp TAB
            >;
         };
+
         fkey_layer {
             bindings = <
             &kp F12 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                                  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11
@@ -452,6 +458,7 @@
                                                                                                        &bt_0   &bt_1   &bt_2     &none   &none   &none
             >;
         };
+
         // Template for new layer
          trans_layer {
             bindings = <
