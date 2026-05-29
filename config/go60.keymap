@@ -31,12 +31,13 @@
 #define DEFAULT                0
 #define DOVRAK                 1
 #define MOD_LAYER              2
-#define UTIL                   3
-#define MACRO_LAYER            4
-#define FKEYS                  5
-#define UMLAUTE                6
-#define MOUSE                  7
-#define MAGIC                  8
+#define ALT_LAYER              3
+#define UTIL                   4
+#define MACRO_LAYER            5
+#define FKEYS                  6
+#define UMLAUTE                7
+#define MOUSE                  8
+#define MAGIC                  9
 
 &mt {
 //    flavor = "tap-preferred";
@@ -136,6 +137,7 @@
         S13: S13 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>              , <&kp GRAVE>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S14: S14 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_PLUS>           , <&kp ASTERISK>        ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S15: S15 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_MINUS>          , <&kp SLASH>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        S16: S16 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_MINUS>          , <&kp UNDERSCORE>      ; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
         C0:  C0    { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&S14>   , <&S15>                             ; mods =                   <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; keep-mods = <(MOD_LSFT|MOD_RSFT)>; };
         // S7 & S8 ([{<
@@ -394,6 +396,17 @@
            >;
         };
 
+        alt_layer {
+            bindings = <
+            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans                                                                  &trans  &trans  &S16
+                                                             &trans  &trans  &trans  &trans  &trans  &trans
+           >;
+        };
+
         util_layer {
            bindings = <
            &trans  &trans  &trans    &trans    &trans            &trans                                                     &kp LEFT   &kp RET &kp EQUAL  &kp KP_DIVIDE  &kp RIGHT       &trans
@@ -454,8 +467,8 @@
              &bt BT_CLR     &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                           &kp C_MUTE &kp C_VOL_DN    &kp C_VOL_UP   &kp C_NEXT &kp C_PREV &none
              &bootloader    &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                           &kp K_APP  &tog UTIL       &tog FKEYS     &none      &none      &bootloader
              &sys_reset     &none            &bt_0            &bt_1            &bt_2            &bt_3                                     &none      &default_layers &none          &none      &none      &sys_reset
-                                             &out OUT_USB            &none            &none                                                                    &none         &none   &none
-                                                                                                       &bt_0   &bt_1   &bt_2     &none   &none   &none
+                                             &out OUT_USB     &none            &none                                                                 &none           &none          &tog ALT_LAYER
+                                                                                                &bt_0   &bt_1   &bt_2     &none   &none   &none
             >;
         };
 
