@@ -424,8 +424,8 @@
             &trans      &kp LC(LS(BSPC)) &kp LC(D)         &kp LC(S)         &trans   &kp LG(LS(S))                   &kp LC(F4)         &none            D16              D17             &none          &trans
             &kp CAPS    &kp LC(X)        &kp LC(Z)         &kp LC(C)         &trans   &kp LS(INS)                     &kp LC(LS(BSPC))   &kp LC(LS(F9))   &kp LC(LS(F10))  &kp LC(F5)      &none          &trans
             &caps_word  &kp LC(W)        &kp LC(F)         &kp LC(R)         &none    &kp LC(V)                       &none              &none            &C1              &C2             &none          &trans
-                                               &kp END  &trans  &trans                                                                  &trans  &trans  &trans
-                                                            &kp BSPC  &kp DEL  &kp LSHFT  &trans  &trans  &kp TAB
+                                               &kp END  &trans  &kp LA(INS)                                                              &trans  &trans  &trans
+                                                            &kp BSPC  &kp DEL  &kp INS  &trans  &trans  &kp TAB
            >;
         };
 
