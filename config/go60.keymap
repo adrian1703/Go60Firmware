@@ -425,7 +425,7 @@
             &kp CAPS    &kp LC(X)        &kp LC(Z)         &kp LC(C)         &trans   &kp LS(INS)                     &kp LC(LS(BSPC))   &kp LC(LS(F9))   &kp LC(LS(F10))  &kp LC(F5)      &none          &trans
             &caps_word  &kp LC(W)        &kp LG(X)         &kp LG(C)         &none    &kp LG(V)                       &none              &none            &C1              &C2             &none          &trans
                                          &kp END           &trans            &kp LA(INS)                                                 &trans           &kp LEFT_BRACKET &kp RIGHT_BRACKET
-                                                                             &kp BSPC  &kp DEL  &kp INS  &trans  &trans  &kp TAB
+                                                                             &kp BSPC  &kp DEL  &kp LALT  &trans  &trans  &kp TAB
            >;
         };
 
