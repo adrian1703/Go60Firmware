@@ -389,7 +389,7 @@
            bindings = <
            &trans  &trans      &trans        &trans         &trans         &trans                          &trans  &trans         &trans         &trans       &trans           &trans
            &trans  &trans      &trans        &trans         &trans         &trans                          &trans  &trans         &trans         &trans       &trans           &trans
-           &trans  &hml LGUI A &hml LALT O   &hml LCTRL E   &hml LSHFT U   &hml ESC I                      &trans  &hmr LSHFT H   &hmr LCTRL T   &hmr LALT N  &hmr LGUI B      &trans
+           &trans  &hml LGUI A &hml LALT O   &hml LCTRL E   &hml LSHFT U   &hml LGUI I                &hmr RGUI D  &hmr LSHFT H   &hmr LCTRL T   &hmr LALT N  &hmr LGUI B      &trans
            &trans  &trans      &trans        &trans         &trans         &trans                          &trans  &trans         &hmr HYPER C   &trans       &hmr2 UMLAUTE Q  &trans
                                &trans        &trans         &trans                                                 &trans         &trans         &trans
                                                                         &trans  &trans  &trans  &trans  &trans  &trans
@@ -423,7 +423,7 @@
             &trans      &trans           &trans            &trans            &trans   &trans                          &kp LS(F6)         &trans           &trans           &trans          &trans         &trans
             &trans      &kp LC(LS(BSPC)) &kp LC(D)         &kp LC(S)         &trans   &kp LG(LS(S))                   &kp LC(F4)         &none            D16              D17             &none          &trans
             &kp CAPS    &kp LC(X)        &kp LC(Z)         &kp LC(C)         &trans   &kp LS(INS)                     &kp LC(LS(BSPC))   &kp LC(LS(F9))   &kp LC(LS(F10))  &kp LC(F5)      &none          &trans
-            &caps_word  &kp LC(W)        &kp LC(F)         &kp LC(R)         &none    &kp LC(V)                       &none              &none            &C1              &C2             &none          &trans
+            &caps_word  &kp LC(W)        &kp LG(X)         &kp LG(C)         &none    &kp LG(V)                       &none              &none            &C1              &C2             &none          &trans
                                          &kp END           &trans            &kp LA(INS)                                                 &trans           &kp LEFT_BRACKET &kp RIGHT_BRACKET
                                                                              &kp BSPC  &kp DEL  &kp INS  &trans  &trans  &kp TAB
            >;
