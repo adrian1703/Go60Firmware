@@ -123,7 +123,7 @@
         };
 
         S1: S1   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>             , <&kp UNDERSCORE>      ; mods = <(MOD_LSFT|MOD_RSFT)>; };
-        S2: S2   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp EQUAL>             , <&kp CARET>            ; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        S2: S2   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp EQUAL>             , <&kp CARET>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S3: S3   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOT>               , <&kp EXCLAMATION>     ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S4: S4   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COLON>             , <&kp SEMI>            ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S5: S5   { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOLLAR>            , <&kp AMPS>            ; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -135,7 +135,7 @@
         S11: S11 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp TILDE>             , <&kp CARET>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S12: S12 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp QUESTION>          , <&kp EXCLAMATION>     ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S13: S13 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>              , <&kp GRAVE>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
-        S14: S14 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_PLUS>           , <&kp ASTERISK>        ; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        S14: S14 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_PLUS>           , <&kp KP_MINUS>        ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S15: S15 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_MINUS>          , <&kp SLASH>           ; mods = <(MOD_LSFT|MOD_RSFT)>; };
         S16: S16 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp KP_MINUS>          , <&kp UNDERSCORE>      ; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
@@ -467,7 +467,7 @@
              &bt BT_CLR     &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                           &kp C_MUTE &kp C_VOL_DN    &kp C_VOL_UP   &kp C_NEXT &kp C_PREV &none
              &bootloader    &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                           &kp K_APP  &tog UTIL       &tog FKEYS     &none      &none      &bootloader
              &sys_reset     &none            &bt_0            &bt_1            &bt_2            &bt_3                                     &none      &default_layers &none          &none      &none      &sys_reset
-                                             &out OUT_USB     &none            &none                                                                 &none           &none          &tog ALT_LAYER
+                                             &out OUT_USB     &none            &none                                                                 &kp LA(LG(MINUS) &kp LA(LG(EQUAL))  &tog ALT_LAYER
                                                                                                 &bt_0   &bt_1   &bt_2     &none   &none   &none
             >;
         };
