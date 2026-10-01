@@ -183,7 +183,7 @@
 
         magic: magic {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
